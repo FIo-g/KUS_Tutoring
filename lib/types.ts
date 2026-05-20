@@ -15,6 +15,8 @@ export interface Subject {
 export interface QuizQuestion {
   id: string
   question: string
+  // 문제에 딸린 C 코드 (pre 블록으로 렌더링)
+  codeBlock?: string
   options: string[]
   correctIndex: number
   explanation?: string
