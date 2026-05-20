@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 // 1. 세션 토큰 확인 (NextAuth.js 권장)
 // 2. 미인증 사용자를 /login 으로 리다이렉트
 // 3. 이미 로그인한 사용자를 /login, /register 에서 리다이렉트
-export function middleware(_request: NextRequest) {
+export function proxy(_request: NextRequest) {
   return NextResponse.next()
 }
 

@@ -20,6 +20,7 @@ export default function QuizRunner({ questions }: QuizRunnerProps) {
     selectedIndex,
     answerState,
     isComplete,
+    wrongAnswers,
     isLastQuestion,
     selectAnswer,
     nextQuestion,
@@ -27,7 +28,14 @@ export default function QuizRunner({ questions }: QuizRunnerProps) {
   } = useQuiz(questions)
 
   if (isComplete) {
-    return <ScoreSummary score={score} total={totalQuestions} onRestart={restart} />
+    return (
+      <ScoreSummary
+        score={score}
+        total={totalQuestions}
+        wrongAnswers={wrongAnswers}
+        onRestart={restart}
+      />
+    )
   }
 
   return (

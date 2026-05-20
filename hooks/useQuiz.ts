@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import { QuizQuestion, AnswerState } from '@/lib/types'
+import { QuizQuestion, AnswerState, WrongAnswer } from '@/lib/types'
 
 interface QuizState {
   currentIndex: number
@@ -9,6 +9,7 @@ interface QuizState {
   selectedIndex: number | null
   answerState: AnswerState
   isComplete: boolean
+  wrongAnswers: WrongAnswer[]
 }
 
 export function useQuiz(questions: QuizQuestion[]) {
@@ -18,6 +19,7 @@ export function useQuiz(questions: QuizQuestion[]) {
     selectedIndex: null,
     answerState: 'unanswered',
     isComplete: false,
+    wrongAnswers: [],
   })
 
   const currentQuestion = questions[state.currentIndex]
@@ -26,12 +28,27 @@ export function useQuiz(questions: QuizQuestion[]) {
   const selectAnswer = useCallback((index: number) => {
     setState(prev => {
       if (prev.answerState !== 'unanswered') return prev
-      const isCorrect = index === questions[prev.currentIndex].correctIndex
+
+      const question = questions[prev.currentIndex]
+      const isCorrect = index === question.correctIndex
+
+      const newWrongAnswers = isCorrect
+        ? prev.wrongAnswers
+        : [
+            ...prev.wrongAnswers,
+            {
+              questionNumber: prev.currentIndex + 1,
+              question,
+              selectedIndex: index,
+            } satisfies WrongAnswer,
+          ]
+
       return {
         ...prev,
         selectedIndex: index,
         answerState: isCorrect ? 'correct' : 'incorrect',
         score: isCorrect ? prev.score + 1 : prev.score,
+        wrongAnswers: newWrongAnswers,
       }
     })
   }, [questions])
@@ -57,6 +74,7 @@ export function useQuiz(questions: QuizQuestion[]) {
       selectedIndex: null,
       answerState: 'unanswered',
       isComplete: false,
+      wrongAnswers: [],
     })
   }, [])
 
@@ -68,6 +86,7 @@ export function useQuiz(questions: QuizQuestion[]) {
     selectedIndex: state.selectedIndex,
     answerState: state.answerState,
     isComplete: state.isComplete,
+    wrongAnswers: state.wrongAnswers,
     isLastQuestion,
     selectAnswer,
     nextQuestion,
