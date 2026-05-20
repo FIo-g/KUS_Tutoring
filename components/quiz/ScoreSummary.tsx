@@ -8,6 +8,7 @@ interface ScoreSummaryProps {
   total: number
   wrongAnswers: WrongAnswer[]
   onRestart: () => void
+  onBackToChapters: () => void
 }
 
 function getMessage(score: number, total: number): string {
@@ -18,7 +19,7 @@ function getMessage(score: number, total: number): string {
   return '더 연습이 필요해요 💪'
 }
 
-export default function ScoreSummary({ score, total, wrongAnswers, onRestart }: ScoreSummaryProps) {
+export default function ScoreSummary({ score, total, wrongAnswers, onRestart, onBackToChapters }: ScoreSummaryProps) {
   const pct = Math.round((score / total) * 100)
   const allCorrect = wrongAnswers.length === 0
 
@@ -38,9 +39,14 @@ export default function ScoreSummary({ score, total, wrongAnswers, onRestart }: 
         <p className="text-xl font-semibold text-slate-700 mb-8">
           {getMessage(score, total)}
         </p>
-        <Button size="lg" onClick={onRestart}>
-          다시 풀기
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button size="lg" onClick={onRestart}>
+            다시 풀기
+          </Button>
+          <Button size="lg" variant="secondary" onClick={onBackToChapters}>
+            챕터 선택으로
+          </Button>
+        </div>
       </div>
 
       {/* 틀린 문제 해설 */}
