@@ -30,7 +30,7 @@ export default function ScoreSummary({ score, total, wrongAnswers, onRestart, on
         <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">
           최종 결과
         </p>
-        <div className="text-7xl font-extrabold text-blue-600 mb-1">
+        <div className="text-7xl font-extrabold text-crimson-600 mb-1">
           {score}
           <span className="text-4xl text-slate-300 mx-2">/</span>
           <span className="text-4xl text-slate-500">{total}</span>

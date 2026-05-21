@@ -9,8 +9,8 @@ const noto = Noto_Sans_KR({
 })
 
 export const metadata: Metadata = {
-  title: 'KUS 학습 플랫폼',
-  description: '경희대학교 학생을 위한 과목별 학습 플랫폼',
+  title: '컴카이브',
+  description: '고려대학교 세종캠퍼스 학습 플랫폼',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

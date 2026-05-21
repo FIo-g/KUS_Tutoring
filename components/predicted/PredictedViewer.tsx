@@ -111,7 +111,7 @@ function FilterChip({
       onClick={onClick}
       className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
         active
-          ? 'border-blue-500 bg-blue-50 text-blue-700'
+          ? 'border-crimson-500 bg-crimson-50 text-crimson-700'
           : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300'
       }`}
     >
@@ -194,7 +194,7 @@ function ExpectedQuestionCard({
       {/* TODO: auth 연동 후 "복습 완료" 체크 버튼 추가 */}
       <button
         onClick={() => setRevealed(v => !v)}
-        className="text-xs font-semibold text-blue-600 hover:text-blue-700 underline underline-offset-2 cursor-pointer"
+        className="text-xs font-semibold text-crimson-600 hover:text-crimson-700 underline underline-offset-2 cursor-pointer"
       >
         {revealed ? '답안 숨기기' : '답안 보기'}
       </button>

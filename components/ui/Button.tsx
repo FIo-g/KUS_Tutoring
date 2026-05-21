@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<NonNullable<ButtonProps['variant']>, string> = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 disabled:bg-slate-300 disabled:text-slate-500',
+  primary: 'bg-crimson-600 text-white hover:bg-crimson-700 disabled:bg-slate-300 disabled:text-slate-500',
   secondary: 'bg-slate-100 text-slate-700 hover:bg-slate-200 disabled:opacity-50',
   ghost: 'text-slate-600 hover:bg-slate-100 disabled:opacity-50',
 }

@@ -84,8 +84,8 @@ function MarkdownBody({ text }: { text: string }) {
         }
         if (block.type === 'blockquote') {
           return (
-            <div key={i} className="border-l-4 border-blue-300 pl-4 py-0.5 bg-blue-50 rounded-r-lg">
-              <p className="text-blue-800 text-sm">{renderInline(block.content)}</p>
+            <div key={i} className="border-l-4 border-crimson-300 pl-4 py-0.5 bg-crimson-50 rounded-r-lg">
+              <p className="text-crimson-800 text-sm">{renderInline(block.content)}</p>
             </div>
           )
         }

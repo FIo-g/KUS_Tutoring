@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Category } from '@/lib/types'
 
 const COLOR_MAP: Record<string, { bg: string; border: string; dot: string; text: string }> = {
-  'major-required':   { bg: 'bg-blue-50',    border: 'border-blue-200',   dot: 'bg-blue-400',   text: 'text-blue-800'  },
+  'major-required':   { bg: 'bg-crimson-50', border: 'border-crimson-200', dot: 'bg-crimson-400', text: 'text-crimson-800' },
   'major-elective':   { bg: 'bg-violet-50',  border: 'border-violet-200', dot: 'bg-violet-400', text: 'text-violet-800'},
   'required-general': { bg: 'bg-emerald-50', border: 'border-emerald-200',dot: 'bg-emerald-400',text: 'text-emerald-800'},
   'core-general':     { bg: 'bg-amber-50',   border: 'border-amber-200',  dot: 'bg-amber-400',  text: 'text-amber-800' },

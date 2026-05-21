@@ -6,9 +6,9 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50">
       <header className="bg-white border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center gap-3">
-          <span className="text-blue-600 font-bold text-lg tracking-tight">KUS</span>
+          <span className="text-crimson-600 font-bold text-lg tracking-tight">컴카이브</span>
           <span className="text-slate-200">|</span>
-          <span className="text-sm text-slate-500">경희대학교 학습 플랫폼</span>
+          <span className="text-sm text-slate-500">고려대학교 세종캠퍼스</span>
         </div>
       </header>
 

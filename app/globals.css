@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@theme {
+  --color-crimson-50:  #fff1f2;
+  --color-crimson-100: #ffe0e3;
+  --color-crimson-200: #ffc0c8;
+  --color-crimson-300: #ff8f9c;
+  --color-crimson-400: #ff5267;
+  --color-crimson-500: #f91d3a;
+  --color-crimson-600: #dc143c;
+  --color-crimson-700: #b91032;
+  --color-crimson-800: #9a0f2c;
+  --color-crimson-900: #830f27;
+}

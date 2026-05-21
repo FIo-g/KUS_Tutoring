@@ -29,7 +29,7 @@ export default function PastExamsViewer({ exams }: PastExamsViewerProps) {
             onClick={() => setSelectedExamId(exam.id)}
             className={`px-4 py-2 rounded-xl text-sm font-semibold border-2 transition-all cursor-pointer ${
               selectedExamId === exam.id
-                ? 'border-blue-500 bg-blue-50 text-blue-700'
+                ? 'border-crimson-500 bg-crimson-50 text-crimson-700'
                 : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300'
             }`}
           >
@@ -112,7 +112,7 @@ function QuestionCard({
       {/* 문제 번호 + 배점 */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-crimson-100 text-crimson-700 text-xs font-bold">
             {question.number}
           </span>
           {question.chapter !== undefined && (
@@ -162,7 +162,7 @@ function QuestionCard({
       <div>
         <button
           onClick={onToggle}
-          className="text-xs font-semibold text-blue-600 hover:text-blue-700 underline underline-offset-2 cursor-pointer"
+          className="text-xs font-semibold text-crimson-600 hover:text-crimson-700 underline underline-offset-2 cursor-pointer"
         >
           {revealed ? '정답 숨기기' : '정답 보기'}
         </button>

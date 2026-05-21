@@ -23,7 +23,7 @@ function getClasses(
     'w-full text-left flex items-center gap-3 px-5 py-4 rounded-xl border-2 transition-all duration-200 text-base'
 
   if (answerState === 'unanswered') {
-    return `${base} border-slate-200 bg-white hover:border-blue-400 hover:bg-blue-50 cursor-pointer`
+    return `${base} border-slate-200 bg-white hover:border-crimson-400 hover:bg-crimson-50 cursor-pointer`
   }
 
   if (index === correctIndex) {
